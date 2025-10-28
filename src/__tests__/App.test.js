@@ -22,16 +22,11 @@ test("should include the <TestComponent />", () => {
   expect(screen.queryByTitle("time video")).toBeInTheDocument();
 });
 
-//   it('should include "Now" in the header instead of a time', () => {
-//     expect(wrapper.find('header').text()).to.not.include(moment().format('MMMM Do YYYY'))
-//     expect(wrapper.find('header').text()).to.include('Now')
-//   });
+test("should include the <TestComponent /> with the correct src", () => {
+  const video = screen.queryByTitle("time video");
+  expect(video).toHaveAttribute(
+    "src",
+    "https://www.youtube.com/embed/5TbUxGZtwGI"
+  );
+});
 
-//   it('should include the ExampleComponent', () => {
-//     expect(wrapper.text()).to.include('<ExampleComponent />')
-//   });
-
-//   it('should include the TestComponent', () => {
-//     expect(wrapper.text()).to.include('<TestComponent />')
-//   });
-// });
